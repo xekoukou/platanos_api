@@ -21,21 +21,21 @@
 #ifndef OCTOPUS_PLATANOS_H_
 #define OCTOPUS_PLATANOS_H_
 
+#include"platanos_common.h"
 #include"../compute.h"
-#include<zookeeper/zookeeper.h>
 
 
 /*
 struct platanos_poll_t{
 zmq_pollitems_t *pollitems;
 int size;
-void *sockets;
 int64_t next_time;
 };
 
 
 struct platanos_t{
 platanos_poll_t *poll;
+void *sockets;
 compute_t *compute;
 
 };
@@ -75,9 +75,6 @@ void platanos_init (platanos_t ** platanos, platanos_poll_t * poll,
 void platanos_register (zhandle_t * zh, char *octopus, char *res_name,
                         char *bind_point);
 
-//inside online
-void platanos_bind_points (zhandle_t * zh, char *octopus, char *comp_name,
-                           char *res_name, char ***bind_points, int *size);
 
 void platanos_send (platanos_t * platanos, zmsg_t * msg);
 
@@ -88,19 +85,9 @@ struct platanos_node_t {
 }
 
 */
-struct platanos_node_t;
-typedef struct platanos_node_t platanos_node_t;
-
-
 platanos_node_t *platanos_connect (platanos_t * platanos, zmsg_t * msg);
 platanos_node_t *platanos_bind (platanos_t * platanos, zmsg_t * msg);
-
 void platanos_connect_to_db (platanos_t * platanos, char *bind_location);
-
-void platanos_node_destroy (platanos_node_t ** platanos_node);
-
-platanos_node_t *platanos_node_dup (platanos_node_t * platanos_node);
-
 
 void platanos_db_do (zmsg_t * msg, void *out);
 #endif
