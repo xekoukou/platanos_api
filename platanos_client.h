@@ -25,13 +25,8 @@
 #include"platanos_common.h"
 #include"../update.h"
 
-/*
-struct platanos_node_t {
-
-
-}
-
-*/
+struct update_t;
+typedef struct update_t update_t;
 
 platanos_node_t *platanos_client_connect (update_t *update, zmsg_t * msg);
 
