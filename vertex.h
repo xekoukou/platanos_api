@@ -27,7 +27,7 @@
 // TODO replace this definition with yours
 
 struct vertex_t {
-
+uint64_t key;
 };
 
 //the key of the vertex is saved by the hash 
@@ -44,9 +44,13 @@ void vertex_destroy(vertex_t *vertex);
 
 vertex_t * vertex_dup(vertex_t *vertex);
 
-//the old data should not be changed
-vertex_t * vertex_deserialize(zframe_t *frame);
+//remove frames from the msg
+void vertex_deserialize(khash_t (vertices) * hash,zmsg_t *msg);
 
-zframe_t * vertex_serialize(vertex_t *vertex);
+//add frames to the msg
+zmsg_t * vertex_serialize(vertex_t *vertex);
+
+
+
 
 #endif
