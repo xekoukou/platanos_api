@@ -53,7 +53,6 @@ struct compute_t;
 typedef struct compute_t compute_t;
 
 
-void platanos_poll_init (platanos_poll_t ** poll);
 
 //returns the next time that the timeout of the poll needs to show
 //other computations before the poll are also performed here, see PlatanosPriorityPoll
@@ -66,14 +65,14 @@ void platanos_do (platanos_t * platanos);
 
 platanos_poll_t *platanos_poll (platanos_t * platanos);
 
-void platanos_init (platanos_t ** platanos, platanos_poll_t * poll,
+void platanos_init (platanos_t ** platanos,
                     compute_t * compute, char *id, zctx_t * ctx);
 
 
 //here one can also add more registration options
 //only for worker_nodes
-void platanos_register (zhandle_t * zh, char *octopus, char *res_name,
-                        char *bind_point);
+void platanos_register (zhandle_t * zh, char *octopus,char *comp_name, char *res_name,
+                        char *bind_point,oconfig_t *config);
 
 
 void platanos_send (platanos_t * platanos, zmsg_t * msg);
@@ -87,7 +86,5 @@ struct platanos_node_t {
 */
 platanos_node_t *platanos_connect (platanos_t * platanos, zmsg_t * msg);
 platanos_node_t *platanos_bind (platanos_t * platanos, zmsg_t * msg);
-void platanos_connect_to_db (platanos_t * platanos, char *bind_location);
 
-void platanos_db_do (zmsg_t * msg, void *out);
 #endif
