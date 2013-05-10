@@ -31,6 +31,8 @@ void platanos_online_bind_points (zhandle_t * zh, char *octopus, char *comp_name
 
 struct platanos_node_t;
 typedef struct platanos_node_t platanos_node_t;
+
+void platanos_node_init( platanos_node_t **plananos_node);
 void platanos_node_destroy (platanos_node_t ** platanos_node);
 platanos_node_t *platanos_node_dup (platanos_node_t * platanos_node);
 
