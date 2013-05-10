@@ -26,7 +26,7 @@
 
 //inside online
 void platanos_online_bind_points (zhandle_t * zh, char *octopus, char *comp_name,
-                           char *res_name, char *bind_points[][50], int *size);
+                           char *res_name, char (**bind_points)[][50], int *size);
 
 
 struct platanos_node_t;
