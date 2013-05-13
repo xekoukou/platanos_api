@@ -20,10 +20,10 @@
 
 
 
-#ifndef _OCTOPUS_VERTEX_H_
-#define _OCTOPUS_VERTEX_H_
+#ifndef _OCTOPUS_API_VERTEX_H_
+#define _OCTOPUS_API_VERTEX_H_
 #include"../hash/khash.h"
-
+#include"../gproject/vertex.h"
 //the key of the vertex is saved by the hash 
 struct vertex_t;
 typedef struct vertex_t vertex_t;
