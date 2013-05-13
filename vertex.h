@@ -24,14 +24,8 @@
 #define _OCTOPUS_VERTEX_H_
 #include"../hash/khash.h"
 
-// TODO replace this definition with yours
-
-struct vertex_t {
-uint64_t key;
-};
-
 //the key of the vertex is saved by the hash 
-
+struct vertex_t;
 typedef struct vertex_t vertex_t;
 
 
