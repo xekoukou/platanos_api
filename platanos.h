@@ -64,7 +64,7 @@ void platanos_poll_pollitems (platanos_poll_t * poll,
 
 void platanos_do (platanos_t * platanos);
 
-platanos_poll_t *platanos_poll (platanos_t * platanos);
+platanos_poll_t *platanos_return_poll (platanos_t * platanos);
 
 void platanos_init (platanos_t ** platanos,
                     compute_t * compute, char *id, zctx_t * ctx);
