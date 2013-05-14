@@ -23,6 +23,7 @@
 
 #include"platanos_common.h"
 #include"../compute.h"
+#include"../config.h"
 
 
 /*
